@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nikku</title>
+    <link rel="stylesheet" href="./style12.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="600" viewBox="0 -140 600 800" preserveAspectRatio="xMinYMin meet">   
+  
+ <g transform="translate(0,-190) scale(1.4 1)">
+ 
+ <!-- City background -->
+ <image xlink:href="https://i.stack.imgur.com/ekgpJ.png" width="1383" height="637" />
+   </g>
+   <!-- Marked road    -->
+    
+   <g transform="skewX(45) translate(-700 103) ">	  
+	  <rect x="-10" y="350" width="2400" height="200" fill="grey" stroke="#bababa" stroke-width="15" stroke-dasharray="100 2"/> 
+	    <path d="M0 450 L2400 450" fill="white" stroke="white" stroke-width="10" stroke-dasharray=" 100 55 140 35" />
+    </g>		
+  <!-- Car -->
+<g id="car" transform="translate(-2400,0)">
+<image xlink:href="https://i.stack.imgur.com/xWNOG.png" width="100%" height="100%" />
+   <!-- Turn signal lights -->
+   <g transform="translate(-30,265)">
+	  <path id="turn" opacity="0" d="m78.3 155.8c8.3-7.5 19-8.8 26.7-10 7-1.1-1.7 11.5-11.1 18.2-4.8 3.4-20-4.3-15.7-8.3zM543.2 115.6"  >
+	  <animate attributeName="opacity" begin="an_move1.end" dur="1s" values="0;1;0" repeatCount="3"/>
+	  </path>
+	  <!-- Stop signal -->
+	  <path id="stopLamp" opacity="0" d="m543.2 115.6c3.3-1.5 24-5.4 35.3-2 4.1 1.2 8.3 3.9 10.2 7.7 2.5 4.8 1 11.2  0.6 16.2-0.8 8.7 8.6 15.2 3.7 14.5-7.8-1.1-19.7-7.5-28.2-13.7-8.4-6.2-25.4-21.1-21.6-22.8z" >
+	  <animate attributeName="opacity" begin="an_move1.end-1.5s;an_pause.end+1.5s" dur="1.2s" values="0;1" repeatCount="1"/> 
+	  </path> 
+	</g>  
+ <g id="wheel_left" transform=" translate(85,430) scale(0.145)" >
+   <image xlink:href="https://i.stack.imgur.com/0Osjx.png" width="100%" height="100%" >
+     <!-- Left wheel rotation animation -->
+ <animateTransform
+     id="an_left"
+	 attributeName="transform"
+	 type="rotate"
+	 begin="0s;6s;16s;26s;36s;46s;56s;66s;76s"
+	 end="an_pause.begin"
+	 values="
+	0 300 400;
+	 -360 300 400"
+	 dur="1s"
+	 repeatCount="indefinite"
+ />
+ </image>
+ </g>  
+    
+ <g id="wheel_right" transform=" translate(455,430) scale(0.145)" >
+ <image xlink:href="https://i.stack.imgur.com/0Osjx.png" width="100%" height="100%" > 
+     <!-- Right wheel rotation animation -->
+    <animateTransform
+	  id="an_right"
+	  attributeName="transform"
+	  type="rotate"
+	  begin="0s;6s;16s;26s;36s;46s;56s;66s;76s"
+	  end="an_pause.begin"
+	  values="
+	  0 300 400;
+	 -360 300 400"
+	  dur="1s"
+	  repeatCount="indefinite"
+	/>
+ </image>
+ </g>
+</g>   
+<!-- Animation of a car moving to a stop -->
+ <animateTransform
+   id="an_move1"
+   xlink:href="#car"
+   attributeName="transform"
+   type="translate"
+   begin="0s;an_move2.end"
+   values="2400;1800;1350;1200;900;800" 
+   keyTimes="0;0.2;0.4;0.5;0.7;1" 
+   dur="4s"
+   fill="freeze"
+   repeatCount="1"
+ />  
+ <!-- Car  move pause   -->
+ <animateTransform
+   id="an_pause"
+   xlink:href="#car"
+   attributeName="transform"
+   type="translate"
+   begin="an_move1.end"
+   values="800"
+   dur="2s"
+   fill="freeze"
+   repeatCount="1"
+ /> 
+ <!-- Animation of a car moving after a stop -->
+  <animateTransform
+   id="an_move2"
+   xlink:href="#car"
+   attributeName="transform"
+   type="translate"
+   begin="an_pause.end"
+   values="800;750;100;0;-600"
+   keyTimes="0;0.2;0.5;0.9;1"
+   dur="4s"
+   fill="freeze"
+   repeatCount="1"
+ />  
+ <rect id="front" transform="scale(1) translate(0 10)" x="0" y="655" width="2400" height="450"  fill="url(#Grad1)" />  
+ 
+
+</svg>
+    <div class="container">
+    </div>
+    <!-- partial -->
+
+</body>
+
+</html>

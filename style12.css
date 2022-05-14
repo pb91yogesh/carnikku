@@ -1,0 +1,16 @@
+.container {
+width:100vw;
+height:100vh;
+overflow:visible;
+margin:-0.3em;
+background: rgb(119,124,116);
+background: linear-gradient(180deg, rgba(119,124,116,1) 0%, rgba(83,159,53,0.938813025210084) 100%);
+}
+#turn{
+fill:gold;
+stroke:none;
+}
+
+#stopLamp {
+fill:crimson;
+}
